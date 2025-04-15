@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books - About Us</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <header>
+        <h2 class="logo">Books</h2>
+        <nav class="navigation">
+            <a href="/">Home</a>
+            <a href="/recommend">Recommend</a>
+            <a href="/contact">Contact</a>
+            <a href="/about" class="active">About</a>
+        </nav>
+    </header>
+
+    <section class="about-section">
+        <div class="about-content">
+            <h2>About Our Website</h2>
+            <p>Welcome to our book recommendation platform! At our website, we're passionate about connecting readers with books they'll love. Through the power of machine learning and extensive book data, we aim to make discovering your next favorite read an enjoyable and personalized experience.</p>
+    
+            <h3>How It Works</h3>
+            <p>Our recommendation system combines several sophisticated techniques to deliver tailored book suggestions:</p>
+            <ul>
+                <li><strong>Collaborative Filtering:</strong> This method analyzes user interactions and ratings to identify similarities between users. By understanding the preferences of users with similar tastes, we recommend books that align with your interests.</li>
+                <li><strong>Popularity-Based Recommendations:</strong> In addition to personalized suggestions, we showcase the top 20 popular books on our platform. These recommendations offer a snapshot of trending and highly-rated titles, providing inspiration for your reading list.</li>
+                <li><strong>Content-Based Filtering:</strong> When a book is not available in our collaborative filtering dataset, we seamlessly integrate with the Google Books API. By leveraging book descriptions, author information, and metadata, we generate content-based recommendations to ensure a diverse selection of suggestions.</li>
+            </ul>
+    
+            <h3>Key Features</h3>
+            <ul>
+                <li><strong>Search Functionality:</strong> Our intuitive search feature allows you to easily find books by title, author, or ISBN. Whether you're searching for a specific book or exploring new genres, our search function makes discovery effortless.</li>
+                <li><strong>Personalized Recommendations:</strong> Receive customized book recommendations based on your unique reading preferences and browsing history. Our algorithms adapt and refine suggestions over time to ensure relevance and accuracy.</li>
+                <li><strong>Detailed Book Information:</strong> Dive deep into each book with comprehensive details, including summaries, author biographies, cover images, and reader reviews. Make informed decisions about your next read with a wealth of information at your fingertips.</li>
+                <li><strong>Responsive Design:</strong> Our website is designed with responsiveness in mind, ensuring a seamless browsing experience across desktop, tablet, and mobile devices. Enjoy a consistent and user-friendly interface wherever you go.</li>
+            </ul>
+    
+            <h3>Technologies Used</h3>
+            <p>Our platform harnesses the power of various technologies to deliver an exceptional user experience:</p>
+            <ul>
+                <li><strong>Python and Flask:</strong> Backend development is powered by Python and the Flask framework, facilitating efficient routing and integration with machine learning models.</li>
+                <li><strong>Machine Learning Models:</strong> We employ machine learning algorithms to train our recommendation models using a curated dataset from Kaggle. These models continuously learn and adapt to user preferences to deliver accurate recommendations.</li>
+                <li><strong>HTML, CSS, and JavaScript:</strong> Frontend development is crafted with HTML, CSS, and JavaScript to create an engaging and visually appealing interface. From sleek layouts to interactive elements, our frontend design enhances user interaction and immersion.</li>
+                <li><strong>Google Books API:</strong> Integration with the Google Books API expands our recommendation database, allowing us to access a vast collection of book information and enriching our content-based recommendations.</li>
+            </ul>
+        </div>
+    </section>
+    
+    
+
+    <footer style="position: static;">
+        <div class="footer-content">
+            <p>Made by Dhruvin Suthar &nbsp;&nbsp;&nbsp;(T.Y B.Sc IT)</p>
+            <div class="social-icons">
+                <a href="https://github.com/dhruvinsuthar" target="_blank" class="fa fa-github"></a>
+                <a href="https://www.linkedin.com/in/dhruvinsuthar/" target="_blank" class="fa fa-linkedin"></a>
+                <a href="" class="fa fa-instagram"></a>
+            </div>
+            <div class="footerinfo">
+                <a href="/">Popular Books</a>
+                <a href="/recommend">Recommend me a Book</a>
+                <a href="/contact">Contact</a>
+                <a href="/about">About</a>
+            </div>
+
+            <div class="footerinfo" style="margin-left: 400px;">
+                <a href="https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset?select=Books.csv" target="_blank">Dataset</a>
+                <a href="https://console.cloud.google.com/apis/dashboard?project=bookrecommendationsystem2412" target="_blank">Google API</a>
+                <a href="https://www.hindawi.com/journals/acisc/2023/1514801/" target="_blank">Summary</a>
+                <a href="/faqs">FAQs</a>
+            </div>
+
+        </div>
+    </footer>
+</body>
+
+</html>

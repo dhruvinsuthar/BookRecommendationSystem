@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+</head>
+<body>
+
+    <header>
+        <h2 class="logo">Books</h2>
+        <nav class="navigation">
+            <a href="/" class="active">Home</a>
+            <a href="/recommend">Recommend</a>
+            <a href="/contact">Contact</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
+
+    <section class="popularbooks">
+        <img src="/static/images/library.jpg" id="bg">
+        <img src="/static/images/book3.png" id="book3">
+        <img src="/static/images/book4.png" id="book4">
+        <img src="/static/images/book.png" id="book1">
+        <img src="/static/images/book2.png" id="book2">
+        <h2 id="text">Popular Books</h2>
+    </section>
+
+    <section class="top20">
+        <h2>Top 20 Books</h2>
+        {% for i in range(book_name|length) %}
+        <a style="text-decoration: none;">
+            <div class="card" data-name="{{i}}">
+                <img src="{{image[i]}}">
+                <!-- <div class="moleskine-notebook"><img src="{{image[i]}}" class="notebook-cover"><div class="notebook-page"></div></div> -->
+                <br>
+                <h1>{{book_name[i]}}</h1>
+                <!-- <h3>{{author[i]}}</h3> -->
+            </div>
+        </a>
+
+{% endfor %}
+        
+    </section>
+    
+    <div class="products-preview">
+        {% for i in range(book_name|length) %}
+        <div class="preview" data-target="{{i}}">
+            <img class="bgpreview" src="{{image[i]}}">
+            <i class="fas fa-times"></i>
+            <img class="img" src="{{image[i]}}" alt="">
+            <div class="book-info">
+                <h1>{{book_name[i]}}</h1>
+                <h3>By - {{author[i]}}</h3>
+                <div class="rates">
+                    <span class="fa fa-star checked"></span>
+                    <h5 class="ratings">{{ratings[i]}}</h5>
+                </div>
+                <p class="isbnno">ISBN -</p>
+                <p class="isbn_number">{{isbn_numbers[i]}}</p>
+                <p class="publisher">Publisher : </p>
+                <p class="date">Published Date : </p>
+                <p class="page_count">Pages : </p>
+                <p class="genre">Genre :</p>
+                <!-- <button class="more-info-btn">More Info</button> -->
+                <a href="https://www.amazon.in/s?k={{book_name[i]}}+{{author[i]}}&i=stripbooks" class="buy-now-link" target="_blank">Amazon Link</a>
+                <button class="recommend-btn" data-title="{{book_name[i]}}">Recommend More</button>
+
+                
+            </div>
+            <h4>Description :</h4>
+            <p class="description"></p><br><br>
+            <h4>About the Author :</h4>
+            <div class="author_info"> 
+                <img class="author_image">
+                <p class="author_description"></p>
+            </div><br>
+            <div class="recommendations" id="recommendationsContainer" ></div>
+            
+        </div>
+        {% endfor %}
+    </div>
+
+<footer style="position: static;">
+    <div class="footer-content">
+        <p>Made by Dhruvin Suthar &nbsp;&nbsp;&nbsp;(T.Y B.Sc IT)</p>
+        <div class="social-icons">
+            <a href="https://github.com/dhruvinsuthar" target="_blank" class="fa fa-github"></a>
+            <a href="https://www.linkedin.com/in/dhruvinsuthar/" target="_blank" class="fa fa-linkedin"></a>
+            <a href="" class="fa fa-instagram"></a>
+        </div>
+        <div class="footerinfo">
+            <a href="/">Popular Books</a>
+            <a href="/recommend">Recommend me a Book</a>
+            <a href="/contact">Contact</a>
+            <a href="/about">About</a>
+        </div>
+        
+        <div class="footerinfo" style="margin-left: 400px;">
+            <a href="https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset?select=Books.csv" target="_blank">Dataset</a>
+            <a href="https://console.cloud.google.com/apis/dashboard?project=bookrecommendationsystem2412" target="_blank">Google API</a>
+            <a href="https://www.hindawi.com/journals/acisc/2023/1514801/" target="_blank">Summary</a>
+            <a href="/faqs">FAQs</a>
+        </div>
+        
+    </div>
+</footer>
+
+    <script src="/static/script/script.js"></script>
+
+</body>
+</html>

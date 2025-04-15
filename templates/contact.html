@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <h2 class="logo">Books</h2>
+        <nav class="navigation">
+            <a href="/">Home</a>
+            <a href="/recommend">Recommend</a>
+            <a href="/contact">Contact</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
+
+    <section class="contact">
+        <h1>Contact Us</h1>
+        <form class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button id="send-button" type="button">Send</button>
+        </form>
+    </section>
+
+    <!-- Popup window container -->
+    <div class="popup" id="popup-window">
+        <div class="popup-content">
+            <a href="https://www.linkedin.com/in/dhruvinsuthar/" target="_blank" class="fa fa-linkedin"></a>
+            <a id="whatsapp-link" href="https://api.whatsapp.com/send?phone=+917498421026&text=" target="_blank"
+                class="fa fa-whatsapp"></a>
+            <i class="fas fa-times close-btn"></i>
+        </div>
+    </div>
+
+    <footer style="position: absolute; bottom:-20% ;">
+        <div class="footer-content">
+            <p>Made by Dhruvin Suthar &nbsp;&nbsp;&nbsp;(T.Y B.Sc IT)</p>
+            <div class="social-icons">
+                <a href="https://github.com/dhruvinsuthar" target="_blank" class="fa fa-github"></a>
+                <a href="https://www.linkedin.com/in/dhruvinsuthar/" target="_blank" class="fa fa-linkedin"></a>
+                <a href="" class="fa fa-instagram"></a>
+            </div>
+            <div class="footerinfo">
+                <a href="/">Popular Books</a>
+                <a href="/recommend">Recommend me a Book</a>
+                <a href="/contact">Contact</a>
+                <a href="/about">About</a>
+            </div>
+
+            <div class="footerinfo" style="margin-left: 400px;">
+                <a href="https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset?select=Books.csv"
+                    target="_blank">Dataset</a>
+                <a href="https://console.cloud.google.com/apis/dashboard?project=bookrecommendationsystem2412"
+                    target="_blank">Google API</a>
+                <a href="https://www.hindawi.com/journals/acisc/2023/1514801/" target="_blank">Summary</a>
+                <a href="/faqs">FAQs</a>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="/static/script/script.js"></script>
+
+    <script>
+        const form = document.querySelector('.contact-form');
+        const sendButton = document.getElementById('send-button');
+        const whatsappLink = document.getElementById('whatsapp-link');
+        const popupWindow = document.getElementById('popup-window');
+        const closeButton = popupWindow.querySelector('.close-btn');
+
+        sendButton.addEventListener('click', function () {
+            const name = encodeURIComponent(form.querySelector('input[name="name"]').value);
+            const email = encodeURIComponent(form.querySelector('input[name="email"]').value);
+            const message = encodeURIComponent(form.querySelector('textarea[name="message"]').value);
+
+            const whatsappMessage = `Hey, My name is ${name},${email}%0A${message}`;
+            whatsappLink.href += whatsappMessage;
+
+            popupWindow.style.display = 'block';
+        });
+
+        closeButton.addEventListener('click', function () {
+            popupWindow.style.display = 'none';
+        });
+    </script>
+
+
+</body>
+
+</html>
